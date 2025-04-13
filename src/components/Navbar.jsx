@@ -6,7 +6,6 @@ import {
   Typography,
   Avatar,
   Menu,
-  MenuItem,
   Box,
   Tooltip,
   Divider,
@@ -42,8 +41,9 @@ export default function Navbar({
       sx={{
         width: { sm: `calc(100% - ${sidebarOpen ? drawerWidth : 72}px)` },
         ml: { sm: `${sidebarOpen ? drawerWidth : 72}px` },
-        backgroundColor: "#1976d2",
+        backgroundColor: theme.palette.primary.main,
         transition: "margin 0.3s, width 0.3s",
+        color: theme.palette.primary.contrastText,
       }}
     >
       <Toolbar>
@@ -66,7 +66,7 @@ export default function Navbar({
         </IconButton>
 
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
-          My Dashboard
+          {/* My Dashboard */}
         </Typography>
 
         {/* Theme Toggle */}
@@ -127,12 +127,12 @@ export default function Navbar({
           <Box display="flex" alignItems="center" mb={1}>
             <Avatar
               src="https://randomuser.me/api/portraits/men/75.jpg"
-              alt="Bharat Kashyap"
+              alt="Sainath Islavath"
               sx={{ width: 56, height: 56, mr: 2 }}
             />
             <Box>
               <Typography variant="subtitle1" fontWeight={600}>
-                Bharat Kashyap
+                Sainath Islavath
               </Typography>
               <Typography
                 variant="body2"
@@ -141,7 +141,7 @@ export default function Navbar({
                   whiteSpace: "nowrap",
                 }}
               >
-                bharatkashyap@outlook.com
+                sainathislavath@gmail.com
               </Typography>
             </Box>
           </Box>

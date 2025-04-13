@@ -17,6 +17,7 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import { Link, useLocation } from "react-router-dom";
 import { useTheme } from "@mui/material/styles";
+import Logo from "../Assets/CareerCraft_Logo.png";
 
 const navItems = [
   { text: "Dashboard", icon: <DashboardIcon />, path: "/" },
@@ -44,9 +45,38 @@ export default function Sidebar({
         color: theme.palette.text.primary,
       }}
     >
-      <Toolbar sx={{ justifyContent: open ? "center" : "flex-start" }}>
+      <Toolbar
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: open ? "center" : "center",
+          gap: 1,
+        }}
+      >
+        <Box
+          component="img"
+          src={Logo}
+          alt="CareerCraft Logo"
+          sx={{
+            height: "auto",
+            width: open ? "20%" : 36,
+            transition: "all 0.3s",
+          }}
+        />
         {open && (
-          <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+          <Typography
+            variant="h6"
+            noWrap
+            sx={{
+              flexGrow: 1,
+              fontWeight: 700,
+              background: "linear-gradient(90deg, #2196f3, #66bb6a)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+              textFillColor: "transparent",
+            }}
+          >
             CareerCraft
           </Typography>
         )}

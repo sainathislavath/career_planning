@@ -16,7 +16,32 @@ export default function ThemeProvider({ children }) {
     setMode((prev) => (prev === "light" ? "dark" : "light"));
   };
 
-  const theme = useMemo(() => createTheme({ palette: { mode } }), [mode]);
+  const theme = useMemo(
+    () =>
+      createTheme({
+        palette: {
+          mode,
+          primary: {
+            main: "#2196f3", // Logo blue
+          },
+          secondary: {
+            main: "#66bb6a", // Logo green
+          },
+          background: {
+            default: mode === "light" ? "#f4f8fb" : "#121212",
+            paper: mode === "light" ? "#ffffff" : "#1e1e1e",
+          },
+        },
+        typography: {
+          fontFamily: "'Poppins', sans-serif",
+          fontWeightBold: 600,
+        },
+        shape: {
+          borderRadius: 12,
+        },
+      }),
+    [mode]
+  );
 
   return (
     <ThemeContext.Provider value={{ mode, toggleTheme }}>
